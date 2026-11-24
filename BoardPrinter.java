@@ -19,7 +19,7 @@ public final class BoardPrinter {
                 int offset = (rowFromBottom % 2 == 0) ? col : width - 1 - col;
                 int position = rowFromBottom * width + offset + 1;
                 String content = position <= size ? cellContent(board, players, position) : EMPTY;
-                out.append(String.format("%-8s", content));
+                out.append(String.format("%-8s ", content)); // trailing space keeps long names from merging
             }
             out.append('\n');
         }
